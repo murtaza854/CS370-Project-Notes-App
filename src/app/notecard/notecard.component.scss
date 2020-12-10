@@ -1,6 +1,7 @@
 @import "../../main-styles.scss";
 .note-card-container
 {
+  position: relative;
   background: white;
   border-radius: 6px;
   box-shadow: 0px 2px 15px 2px rgba(black,0.068);
@@ -8,6 +9,11 @@
   &:hover {
     cursor: pointer;
     box-shadow: 0px 0px 0px 4px rgba(black,0.068);
+    .x-button{
+      opacity: 1;
+      transition-delay: 0.2s;
+      transform: scale(1);
+    }
   }
 
   .note-card-content
@@ -19,5 +25,43 @@
       font-weight: bold;
       color: $purple;
     }
+    .note-card-body{
+      color: #555;
+      position: relative;
+      max-height: 80px;
+      overflow: hidden;
+      .fade-out-truncate{
+        position: absolute;
+        bottom: 0;
+        height: 50%;
+        width: 100%;
+        background: linear-gradient(to bottom,rgba(white,0) 0%, rgba(white,0.8) 50%, white);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.x-button
+{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: $light-red;
+  height: 25px;
+  width: 25px;
+  border-radius: 4%;
+  background-image: url("../../assets/close.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transform: scale(0.35);
+  transition: opacity 0.2s ease-out;
+  &.hover{
+    background-color: darken($purple,100%);
+  }
+  &.active{
+    background-color: darken($purple,100%);
   }
 }

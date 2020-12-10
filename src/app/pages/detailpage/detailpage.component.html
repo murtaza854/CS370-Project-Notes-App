@@ -1,0 +1,10 @@
+<form #noteDetails = "ngForm" (ngSubmit) = "addNote(noteDetails.value)">
+    <div class="title">
+        <input type="text" name="noteTitle" ngModel id="noteT" placeholder="Title">
+    </div>
+    <div class="note">
+        <textarea name="note" id="noteT" ngModel cols="30"></textarea>
+    </div>
+    <input type="submit" value = "submit">
+    <!-- <button>Submit</button> -->
+</form>

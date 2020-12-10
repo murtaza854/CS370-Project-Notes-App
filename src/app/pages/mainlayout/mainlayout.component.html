@@ -1,7 +1,7 @@
 <div class="layout-box">
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <a class="navbar-item" [routerLink]="['']">
         <span style="font-size: 32px;">Notes</span>
       </a>
 
@@ -41,6 +41,7 @@
       </div>
 
       <div class="navbar-end">
+        <a [routerLink]="['add']" class="navbar-item">New Note</a>
         <a class="navbar-item">
           Your Notes
         </a>

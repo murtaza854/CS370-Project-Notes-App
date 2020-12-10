@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./noteslist.component.scss']
 })
 export class NoteslistComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  // public addToNoteslist(data:any) {
+  //   console.log(data);
+  //   console.log('Data passed');
+  // }
 }

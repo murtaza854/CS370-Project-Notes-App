@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { NotesService } from './../services/notes.service';
 
 @Component({
   selector: 'app-notecard',
@@ -6,14 +7,15 @@ import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@ang
   styleUrls: ['./notecard.component.scss']
 })
 export class NotecardComponent implements OnInit {
+  @Input("id") id: number;
   @Input("title") title: string;
-  @Input("body") body: string ="idiot idiot idiot idi otidioti diotidiotidiotidiotidio tidio tidiotidiotidiotidiot idiotidi otidiotidiotidiotidiotidiot";
+  @Input("body") body: string;
   // @ViewChild('truncator')
   // truncator!: ElementRef<HTMLElement>;
   // @ViewChild('bodyText')
   // bodyText!: ElementRef<HTMLElement>;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private _notesService:NotesService) {}
 
   ngOnInit(): void {
     // let style = window.getComputedStyle(this.bodyText.nativeElement,null);
@@ -27,5 +29,7 @@ export class NotecardComponent implements OnInit {
     //   this.renderer.setStyle(this.truncator.nativeElement,'display','none');
     // }
   }
-
+  deleteNote(id:number) {
+    this._notesService.deleteNote(id);
+  }
 }

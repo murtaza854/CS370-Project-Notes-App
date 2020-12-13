@@ -10,15 +10,31 @@ import {Router} from '@angular/router';
 })
 export class DetailpageComponent implements OnInit {
   noteslist:Notes[]=[];
-  // private _notesService:NotesService
+  noteTitle:string="";
+  noteT:string="";
   constructor(private _notesService:NotesService, private router: Router) {
+    this.noteTitle = "";
+    this.noteT = "";
+    if (this.router.getCurrentNavigation()?.extras.state != undefined) {
+      this.noteslist = this._notesService.getNotes();
+      const id:number = this.router.getCurrentNavigation()?.extras.state?.id;
+      for (let index = 0; index < this.noteslist.length; index++) {
+        const element = this.noteslist[index];
+        if (element.id == id) {
+          this.noteTitle = element.title;
+          this.noteT = element.note;
+          break;
+        }
+      }
+      this._notesService.deleteNote(id);
+    }
   }
 
   ngOnInit(): void {
-    this.noteslist = this._notesService.getNotes();
   }
 
   addNote(data:any) {
+    console.log(data);
     if (data.noteTitle == '') alert('Note title must not be empty.');
     else {
       this._notesService.updateNoteslist(data);

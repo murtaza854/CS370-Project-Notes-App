@@ -1,9 +1,9 @@
 <form #noteDetails = "ngForm" (ngSubmit) = "addNote(noteDetails.value)">
     <div class="title">
-        <input type="text" name="noteTitle" ngModel id="noteT" placeholder="Title">
+        <input type="text" name="noteTitle" [(ngModel)]="noteTitle" id="noteT" placeholder="Title">
     </div>
     <div class="note">
-        <textarea name="note" id="noteT" ngModel cols="30"></textarea>
+        <textarea name="note" id="noteT" cols="30" [(ngModel)]="noteT"></textarea>
     </div>
     <input type="submit" value = "submit">
     <!-- <button>Submit</button> -->

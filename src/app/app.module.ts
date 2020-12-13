@@ -16,7 +16,7 @@ import { DetailpageComponent } from './pages/detailpage/detailpage.component';
     NoteslistComponent,
     MainlayoutComponent,
     NotecardComponent,
-    DetailpageComponent
+    DetailpageComponent,
   ],
   imports: [
     BrowserModule,

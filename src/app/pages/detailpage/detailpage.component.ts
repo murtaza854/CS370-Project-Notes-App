@@ -12,6 +12,7 @@ export class DetailpageComponent implements OnInit {
   noteslist:Notes[]=[];
   noteTitle:string="";
   noteT:string="";
+  nId:number = -1;
   constructor(private _notesService:NotesService, private router: Router) {
     this.noteTitle = "";
     this.noteT = "";
@@ -23,10 +24,10 @@ export class DetailpageComponent implements OnInit {
         if (element.id == id) {
           this.noteTitle = element.title;
           this.noteT = element.note;
+          this.nId = id;
           break;
         }
       }
-      this._notesService.deleteNote(id);
     }
   }
 
@@ -34,6 +35,8 @@ export class DetailpageComponent implements OnInit {
   }
 
   addNote(data:any) {
+
+    this._notesService.deleteNote(this.nId);
     console.log(data);
     if (data.noteTitle == '') alert('Note title must not be empty.');
     else {

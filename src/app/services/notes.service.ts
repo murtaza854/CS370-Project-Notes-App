@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class NotesService {
-  noteslist:Notes[]=[];
+  noteslist:Notes[]=[ { id: 0, title: "YOUR MOM", note: "dEATH NOTE" }];
   noteIndex:number=0;
   selectedNote:number=-1;
   constructor() { }

@@ -1,3 +1,5 @@
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms'
@@ -9,6 +11,7 @@ import { MainlayoutComponent } from './pages/mainlayout/mainlayout.component';
 import { NotecardComponent } from './notecard/notecard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailpageComponent } from './pages/detailpage/detailpage.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { DetailpageComponent } from './pages/detailpage/detailpage.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

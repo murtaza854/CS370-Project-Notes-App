@@ -47,21 +47,23 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background-color: $light-red;
-  height: 25px;
-  width: 25px;
-  border-radius: 4%;
-  background-image: url("../../assets/close.svg");
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0;
-  transform: scale(0.35);
-  transition: opacity 0.2s ease-out;
-  &.hover{
-    background-color: darken($purple,100%);
-  }
-  &.active{
-    background-color: darken($purple,100%);
-  }
+  // background-color: $light-red;
+  // height: 25px;
+  // width: 25px;
+  size: 50%;
+  text-align: center;
+  // border-radius: 4%;
+  // background-image: url("../../assets/close.svg");
+  // background-size: 20px;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // opacity: 0;
+  // transform: scale(0.35);
+  // transition: opacity 0.2s ease-out;
+  // &.hover{
+  //   background-color: darken($purple,100%);
+  // }
+  // &.active{
+  //   background-color: darken($purple,100%);
+  // }
 }

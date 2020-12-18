@@ -1,5 +1,4 @@
 // import { Notes } from './../interfaces/notes';
-import { NotesService } from './notes.service';
 import { folder } from './../interfaces/folder';
 import { Injectable } from '@angular/core';
 
@@ -49,6 +48,15 @@ export class FoldersService {
       }
     });
     return notes;
+  }
+  removeFromFolder(noteid:number) {
+    for (let index = 0; index < this.folderslist.length; index++) {
+      const element = this.folderslist[index];
+      if (element.notes.includes(noteid)) {
+        let i = element.notes.indexOf(noteid);
+        this.folderslist[index].notes.splice(i, 1);
+      }
+    }
   }
   deleteFolder(id:number) {
     for (let index = 0; index < this.folderslist.length; index++) {

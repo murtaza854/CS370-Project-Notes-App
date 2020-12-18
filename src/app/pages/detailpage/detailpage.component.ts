@@ -25,7 +25,8 @@ export class DetailpageComponent implements OnInit {
     if (this.folderNotesflag) {
       const foldersList:folder[] = this._foldersService.getFolders();
       foldersList.forEach(e => {
-        if (e.folderID != 0) this.foldersList.push(e);
+        // if (e.folderID != 0) this.foldersList.push(e);
+        this.foldersList.push(e)
       });
       this.noteTitle = "";
       this.noteT = "";

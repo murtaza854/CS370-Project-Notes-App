@@ -5,16 +5,15 @@
     <div *ngIf="folderNotesflag==true" class="note">
         <textarea class="textarea is-primary" name="note" id="noteT" cols="30" [(ngModel)]="noteT"></textarea>
     </div>
+    <h1 *ngIf="foldersList.length!=0" class="folderHeader">Select Folders</h1>
     <div *ngIf="folderNotesflag==true" class="folderList">
       <div *ngFor="let folder of foldersList">
-        <label>
-            <input type="checkbox"
+        <input type="checkbox"
                    name="options"
                    class="folderBox"
                    value="{{folder.folderID}}"
                    (change)="updateCheckedOptions(folder.folderID, $event)" />
-            {{folder.foldername}}
-        </label>
+        <label for="">{{folder.foldername}}</label>
     </div>
   </div>
   <div style="margin=auto; width: 100%; margin-top: 30px;"><button class="button is-success is-rounded is-large" type = "submit" style="

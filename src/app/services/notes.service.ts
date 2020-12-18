@@ -1,3 +1,4 @@
+import { FoldersService } from './folders.service';
 import { Notes } from './../interfaces/notes';
 import { Injectable } from '@angular/core';
 
@@ -9,7 +10,7 @@ export class NotesService {
   noteslist:Notes[]=[];
   noteIndex:number=0;
   selectedNote:number=-1;
-  constructor() { }
+  constructor(private _foldersService:FoldersService) { }
   getNotes() {
     var noteslist:Notes[]=[];
     this.noteslist.forEach(e => {
@@ -29,6 +30,7 @@ export class NotesService {
     this.noteslist.forEach(e => {
       if (e.id == id && e.deleted == false) {
         e.deleted = true;
+        this._foldersService.removeFromFolder(id);
       } else if (e.id == id && e.deleted == true) {
         flag = true;
       }

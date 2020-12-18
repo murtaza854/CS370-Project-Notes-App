@@ -1,0 +1,12 @@
+<div #container class="note-card-container">
+  <div class="note-card-content">
+    <div class="note-id" style="display: none;">{{ id }}</div>
+    <h1 class="note-card-title">{{ title }}</h1>
+        <button
+        mat-icon-button
+          color="warn"
+          aria-label="Example icon button with a filter list icon" (click)="deleteFolder(id)" class="x-button"
+        >
+          <mat-icon>clear</mat-icon>
+        </button>
+</div>

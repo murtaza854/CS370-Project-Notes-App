@@ -2,9 +2,20 @@
     <div class="title">
         <input type="text" name="noteTitle" [(ngModel)]="noteTitle" id="noteT" placeholder="Title">
     </div>
-    <div class="note">
+    <div *ngIf="folderNotesflag==true" class="note">
         <textarea name="note" id="noteT" cols="30" [(ngModel)]="noteT"></textarea>
     </div>
+    <div *ngIf="folderNotesflag==true" class="folderList">
+      <div *ngFor="let folder of foldersList">
+        <label>
+            <input type="checkbox"
+                   name="options"
+                   class="folderBox"
+                   value="{{folder.folderID}}"
+                   (change)="updateCheckedOptions(folder.folderID, $event)" />
+            {{folder.foldername}}
+        </label>
+    </div>
+  </div>
     <input type="submit" value = "submit">
-    <!-- <button>Submit</button> -->
 </form>

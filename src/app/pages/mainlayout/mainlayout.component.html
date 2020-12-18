@@ -42,13 +42,9 @@
 
       <div class="navbar-end">
         <a [routerLink]="['add']" class="navbar-item">New Note</a>
-        <a class="navbar-item">
-          Your Notes
-        </a>
-
-        <a class="navbar-item">
-          Recently Deleted
-        </a>
+        <a [routerLink]="['foldernew']" class="navbar-item">New Folder</a>
+        <a [routerLink]="['favourites']" class="navbar-item">Favourites</a>
+        <a [routerLink]="['recently-deleted']" class="navbar-item">Recently Deleted</a>
 
         <!-- <div class="navbar-item">
           <div class="buttons">

@@ -12,6 +12,7 @@ import { NotecardComponent } from './notecard/notecard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailpageComponent } from './pages/detailpage/detailpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FoldersComponent } from './folders/folders.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainlayoutComponent,
     NotecardComponent,
     DetailpageComponent,
+    FoldersComponent,
   ],
   imports: [
     BrowserModule,

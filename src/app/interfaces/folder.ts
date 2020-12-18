@@ -1,4 +1,5 @@
 export interface folder {
+  folderID:number,
   foldername:string, // name
   notes:number[], // ids of notes
   Elements:number, // number of elements

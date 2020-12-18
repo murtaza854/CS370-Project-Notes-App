@@ -9,8 +9,12 @@
       </span>
     </div>
   </div>
-  <div class="notes-list">
+  <div *ngIf="folderNotesflag == false" class="notes-list">
     <app-notecard *ngFor="let note of noteslist;" (click)="openNote(note.id)" [id]="note.id" [title]="note.title" [body]="note.note"></app-notecard>
+    <!-- <app-notecard></app-notecard> -->
+  </div>
+  <div *ngIf="folderNotesflag == true" class="notes-list">
+    <app-folders *ngFor="let folder of folderslist;" (click)="openFolder(folder.folderID)" [id]="folder.folderID" [title]="folder.foldername"></app-folders>
     <!-- <app-notecard></app-notecard> -->
   </div>
 </div>

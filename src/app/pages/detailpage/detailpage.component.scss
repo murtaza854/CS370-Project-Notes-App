@@ -1,23 +1,33 @@
 .title {
+  align-items: center;
+  padding-left: 30%;
     input {
         font-size: 50px;
         padding-left: 20px;
         border: none;
         border-bottom: 1px solid black;
         padding-top: 20px;
-        width: 100%;
+        width: 60%;
+        align-items: center;
         padding-right: 20px;
         &:focus {
             outline: none;
+        }
+        input::placeholder {
+          text-align: center;
         }
     }
 }
 
 .note {
+
+  align-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
     textarea {
         // margin-top: 10px;
         // margin-left: 50px;
-        width: 100%;
+        width: 60%;
         height: 300px;
         -moz-border-bottom-colors: none;
         -moz-border-left-colors: none;
@@ -34,6 +44,7 @@
         font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 1em;
         line-height: 1.4em;
+
         padding: 5px 8px;
         transition: background-color 0.2s ease 0s;
         &:focus {

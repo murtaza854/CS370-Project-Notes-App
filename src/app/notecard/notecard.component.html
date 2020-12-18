@@ -10,8 +10,15 @@
         <button
         mat-icon-button
           color="warn"
-          aria-label="Example icon button with a filter list icon" (click)="deleteNote(id)" class="x-button"
+          aria-label="Example icon button with a filter list icon" (click)="$event.preventDefault(); $event.stopPropagation();deleteNote(id)" class="x-button"
         >
           <mat-icon>clear</mat-icon>
+        </button>
+        <button
+        mat-icon-button
+          color="primary"
+          aria-label="Example icon button with a filter list icon" (click)="$event.preventDefault(); $event.stopPropagation();markFavourite(id)" class="fav-button" style="color: orange;"
+        >
+        <i [ngClass]="favourite ? 'fas fa-star fa-lg':'far fa-star fa-lg'"></i>
         </button>
 </div>

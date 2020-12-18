@@ -67,7 +67,7 @@ export class NotesService {
   }
   markFavourite(id:number) {
     this.noteslist.forEach(e => {
-      if (e.id == id) e.favourite = true;
+      if (e.id == id) e.favourite = !e.favourite;
     });
     return this.noteslist;
   }

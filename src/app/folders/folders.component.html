@@ -3,9 +3,10 @@
     <div class="note-id" style="display: none;">{{ id }}</div>
     <h1 class="note-card-title">{{ title }}</h1>
         <button
+        *ngIf = "id !==0"
         mat-icon-button
           color="warn"
-          aria-label="Example icon button with a filter list icon" (click)="deleteFolder(id)" class="x-button"
+          aria-label="Example icon button with a filter list icon" (click)="$event.preventDefault(); $event.stopPropagation();deleteFolder(id)" class="x-button"
         >
           <mat-icon>clear</mat-icon>
         </button>

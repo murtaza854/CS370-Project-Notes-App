@@ -12,6 +12,7 @@ export class NotecardComponent implements OnInit {
   @Input("id") id: number;
   @Input("title") title: string;
   @Input("body") body: string;
+  @Input("favourite") favourite:boolean;
   // @ViewChild('truncator')
   // truncator!: ElementRef<HTMLElement>;
   // @ViewChild('bodyText')
@@ -33,5 +34,8 @@ export class NotecardComponent implements OnInit {
   }
   deleteNote(id:number) {
     this._notesService.deleteNote(id);
+  }
+  markFavourite(id:number) {
+    this._notesService.markFavourite(id);
   }
 }

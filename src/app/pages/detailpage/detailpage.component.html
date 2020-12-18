@@ -3,7 +3,7 @@
         <input type="text" name="noteTitle" [(ngModel)]="noteTitle" id="noteT" placeholder="Title">
     </div>
     <div *ngIf="folderNotesflag==true" class="note">
-        <textarea name="note" id="noteT" cols="30" [(ngModel)]="noteT"></textarea>
+        <textarea class="textarea is-primary" name="note" id="noteT" cols="30" [(ngModel)]="noteT"></textarea>
     </div>
     <div *ngIf="folderNotesflag==true" class="folderList">
       <div *ngFor="let folder of foldersList">
@@ -17,5 +17,10 @@
         </label>
     </div>
   </div>
-    <input type="submit" value = "submit">
+  <div style="margin=auto; width: 100%; margin-top: 30px;"><button class="button is-success is-rounded is-large" type = "submit" style="
+    left: 50%;
+    transform: translateX(-50%);
+">Make</button>
+  </div>
+
 </form>
